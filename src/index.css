@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  
+  /* Brand Theme Colors matching Charles Prints row HTML design */
+  --color-brand-red: #EA3829;
+  --color-sidebar-bg: #070D19;
+  --color-sidebar-dark: #050913;
+  --color-sidebar-border: #151E30;
+  --color-slate-muted: #94A3B8;
+  --color-slate-text: #334155;
+  --color-border-light: #E2E8F0;
+  --color-main-bg: #F8FAFC;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+
+
 
 
