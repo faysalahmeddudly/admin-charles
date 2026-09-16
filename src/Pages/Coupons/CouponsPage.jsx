@@ -3,34 +3,8 @@ import Icon from "../../components/shared/Icon";
 export default function CouponsPage() {
   return (
     <>
-      {/* Main column */}
-      <div className="flex-1 min-w-0 flex flex-col">
-        {/* Topbar */}
-        <header className="p-3 sm:p-4 lg:p-6 flex items-center justify-between gap-2 px-3 sm:px-4 lg:px-6 border-b border-[#E2E8F0] bg-white sticky top-0 z-20">
-          <div className="flex items-center gap-1 min-w-0">
-            <p className="text-sm text-[#94A3B8] hidden sm:inline">Admin</p>
-            <Icon name="chevron-right" className="w-5 h-5 hidden sm:inline shrink-0" />
-            <p className="font-bold text-sm text-[#334155] truncate">Coupons & Discounts</p>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-3 lg:gap-5 shrink-0">
-            <div className="hidden md:flex items-center w-[180px] lg:w-[270px] h-9 px-3 gap-2 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC]">
-              <Icon name="search" className="w-4 h-4 text-[#94A3B8] shrink-0" />
-              <input type="text" placeholder="Search anything..." className="w-full bg-transparent outline-none text-sm text-[#334155] placeholder:text-[#94A3B8]" />
-            </div>
-
-            <button className="relative w-9 h-9 flex items-center justify-center shrink-0">
-              <Icon name="bell" className="w-5 h-5 text-[#64748B]" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-[#EA3829] rounded-full"></span>
-            </button>
-
-            <button id="menuBtn" className="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-md border border-gray-300 shrink-0">
-              <Icon name="menu" className="w-5 h-5" />
-            </button>
-          </div>
-        </header>
-
-        {/* Content */}
-        <main className="flex-1 p-3 sm:p-4 lg:p-6 bg-[#F8FAFC] flex flex-col gap-4 sm:gap-6 min-w-0">
+      {/* Content */}
+      <main className="flex-1 p-3 sm:p-4 lg:p-6 bg-[#F8FAFC] flex flex-col gap-4 sm:gap-6 min-w-0">
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <p className="font-bold text-[18px] leading-7 tracking-[-0.5px] sm:text-[20px] lg:text-[24px] lg:leading-8 lg:tracking-[-0.6px] text-[#0F172A]">Coupons & Discounts</p>
             <button id="newCouponBtn" type="button" className="bg-[#EA3829] text-white rounded-[8px] py-2 px-3 lg:px-4 flex items-center gap-1 lg:gap-2 shadow-[0_1px_2px_0_rgba(0,0,0,0.2)] hover:bg-[#D92F22] hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.2)] transition-all duration-200 shrink-0">
@@ -103,7 +77,6 @@ export default function CouponsPage() {
             </div>
           </div>
         </main>
-      </div>
 
       {/* New Coupon Modal (must be in the DOM BEFORE the script that queries it) */}
     <div id="couponModal" className="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-4">
