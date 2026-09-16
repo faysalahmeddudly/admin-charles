@@ -1,103 +1,31 @@
+import { Link } from "react-router";
+import Icon from "../../components/shared/Icon";
+
 export default function OrderDetailsPage() {
   return (
     <>
-      <div className="flex min-h-screen font-[Inter]">
-      {/* Sidebar */}
-      <aside id="sidebar" className="fixed inset-y-0 left-0 z-50 w-[302px] -translate-x-full bg-[#070D19] border-r border-[#151E30] transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 lg:shrink-0 flex flex-col justify-between">
-        <div>
-          <div className="flex items-center justify-center p-6">
-            <img src="assets/logo.png" alt="Logo" className="sm:h-10 lg:h-16 w-auto rounded-lg" />
-          </div>
-
-          <nav className="px-10 flex flex-col gap-1">
-            <a href="index.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-              <i data-lucide="layout-dashboard" className="h-4"></i>
-              <p className="text-sm">Dashboard</p>
-            </a>
-            <a href="order.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] bg-[#EA3829] text-white">
-              <i data-lucide="lock" className="h-4"></i>
-              <p className="text-sm">Orders</p>
-            </a>
-            <div className="group">
-                <a href="products.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-                    <i data-lucide="tag" className="h-4"></i>
-                    <p className="text-sm">Products</p>
-                    <i data-lucide="chevron-down" className="ml-auto h-3 w-3"></i>
-                </a>
-
-                {/* submenu */}
-                <div className="hidden group-hover:flex flex-col ml-5 mt-1 rounded-[8px] bg-[#111827]">
-
-                    <a href="product-categories.html"
-                    className="flex items-center gap-2 px-3 py-3 rounded-[8px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-                        <i data-lucide="tag" className="h-3.5"></i>
-                        <p className="text-xs">Categories & Attributes</p>
-                    </a>
-                </div>
-            </div>
-            <a href="studio.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-              <i data-lucide="image" className="h-4"></i>
-              <p className="text-sm">Design Studio Assets</p>
-            </a>
-            <a href="customers.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-              <i data-lucide="user-round" className="h-4"></i>
-              <p className="text-sm">Customers</p>
-            </a>
-            <a href="coupons.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-              <i data-lucide="ticket" className="h-4"></i>
-              <p className="text-sm">Coupons & Discounts</p>
-            </a>
-            <a href="tickets.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-              <i data-lucide="life-buoy" className="h-4"></i>
-              <p className="text-sm">Support Tickets</p>
-            </a>
-            <a href="cms.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-              <i data-lucide="monitor" className="h-4"></i>
-              <p className="text-sm">Content / CMS</p>
-            </a>
-            <a href="settings.html" className="flex items-center gap-2.5 p-3 rounded-[12px] text-[#94A3B8] hover:bg-[#EA3829] hover:text-white">
-              <i data-lucide="settings" className="h-4"></i>
-              <p className="text-sm">Settings</p>
-            </a>
-          </nav>
-        </div>
-
-        <div className="bg-[#050913] p-6 flex gap-3 items-center">
-          <div className="h-8 w-8 bg-[#EA3829] flex items-center justify-center rounded-full">
-            <span className="font-bold text-[12px] leading-4 tracking-[-0.3px] text-white">SM</span>
-          </div>
-          <div className="flex flex-col gap-[2px]">
-            <p className="font-bold text-[13px] leading-4 text-white">Sarah Miller</p>
-            <p className="text-[11px] leading-3.5 text-[#94A3B8]">Store Manager</p>
-          </div>
-        </div>
-      </aside>
-
-      {/* Overlay (mobile only) */}
-      <div id="overlay" className="fixed inset-0 bg-black/30 z-30 hidden lg:hidden"></div>
-
       {/* Main column */}
       <div className="flex-1 min-w-0 flex flex-col">
         {/* Topbar */}
         <header className="p-4 sm:p-6 lg:p-6 flex items-center justify-between px-4 sm:px-6 border-b border-[#E2E8F0] bg-white sticky top-0 z-20">
           <div className="flex items-center gap-1">
             <p className="text-sm text-[#94A3B8]">Admin</p>
-            <i data-lucide="chevron-right" className="w-5 h-5"></i>
+            <Icon name="chevron-right" className="w-5 h-5" />
             <p className="font-bold text-sm text-[#334155]">Orders</p>
           </div>
           <div className="flex items-center gap-3 lg:gap-5">
             <div className="hidden sm:flex items-center w-[270px] h-9 px-3 gap-2 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC]">
-              <i data-lucide="search" className="w-4 h-4 text-[#94A3B8]"></i>
+              <Icon name="search" className="w-4 h-4 text-[#94A3B8]" />
               <input type="text" placeholder="Search anything..." className="w-full bg-transparent outline-none text-sm text-[#334155] placeholder:text-[#94A3B8]" />
             </div>
 
             <button className="relative w-9 h-9 flex items-center justify-center">
-              <i data-lucide="bell" className="w-5 h-5 text-[#64748B]"></i>
+              <Icon name="bell" className="w-5 h-5 text-[#64748B]" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-[#EA3829] rounded-full"></span>
             </button>
 
             <button id="menuBtn" className="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-md border border-gray-300">
-              <i data-lucide="menu" className="w-5 h-5"></i>
+              <Icon name="menu" className="w-5 h-5" />
             </button>
           </div>
         </header>
@@ -107,9 +35,9 @@ export default function OrderDetailsPage() {
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
             <div className="flex flex-col gap-1">
               <div className="flex items-center flex-wrap gap-y-1.5">
-                <a href="order.html" className="inline-flex items-center">
-                  <i data-lucide="move-left" className="w-6 p-1"></i>
-                </a>
+                <Link to="/orders" className="inline-flex items-center">
+                  <Icon name="move-left" className="w-6 p-1" />
+                </Link>
 
                 <p className="font-bold text-[20px] texr-[#111827] pl-1">#1015</p>
                 <div className="bg-[#BBF7D0] rounded-full flex items-center gap-[6px] py-[2px] px-2 ml-1.5">
@@ -135,17 +63,17 @@ export default function OrderDetailsPage() {
               </button>
               <button type="button" className="shrink-0 border border-[#D1D5DB] rounded-[8px] py-1.5 px-3 bg-white flex items-center gap-1">
                 <span className="text-[#1F2937] font-bold text-xs">More actions</span>
-                <i data-lucide="chevron-down" className="w-4 mt-[1px] text-[#6B7280]"></i>
+                <Icon name="chevron-down" className="w-4 mt-[1px] text-[#6B7280]" />
               </button>
               <div className="shrink-0 flex items-center border border-[#D1D5DB] rounded-[8px] overflow-hidden bg-white">
                 <button type="button" className="w-[36px] h-[36px] flex items-center justify-center">
-                  <i data-lucide="chevron-up" className="w-4 h-4 text-[#6B7280]"></i>
+                  <Icon name="chevron-up" className="w-4 h-4 text-[#6B7280]" />
                 </button>
 
                 <div className="w-px h-[36px] bg-[#D1D5DB]"></div>
 
                 <button type="button" className="w-[36px] h-[36px] flex items-center justify-center">
-                  <i data-lucide="chevron-down" className="w-4 h-4 text-[#6B7280]"></i>
+                  <Icon name="chevron-down" className="w-4 h-4 text-[#6B7280]" />
                 </button>
               </div>
             </div>
@@ -157,13 +85,13 @@ export default function OrderDetailsPage() {
                 <div className="p-4 border-b border-[#E1E3E5]">
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <i data-lucide="archive" className="w-4 text-[#374151]"></i>
+                      <Icon name="archive" className="w-4 text-[#374151]" />
                       <p className="font-bold text-sm text-[#111827]">Fulfilled (6)</p>
                       <p className="text-xs text-[#616161]">#1015-F1</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <button type="button">
-                        <i data-lucide="ellipsis" className="w-4 text-[#6B7280]"></i>
+                        <Icon name="ellipsis" className="w-4 text-[#6B7280]" />
                       </button>
                       <button type="button" className="border border-[#D1D5DB] py-1 px-2.5 rounded-[8px]">
                         <p className="text-xs font-bold text-[#1F2937] whitespace-nowrap">Update delivery Status</p>
@@ -172,11 +100,11 @@ export default function OrderDetailsPage() {
                   </div>
                   <div className="mt-2.5 flex flex-col">
                     <div className="flex items-center gap-2">
-                      <i data-lucide="calendar" className="w-3 text-[#6B7280]"></i>
+                      <Icon name="calendar" className="w-3 text-[#6B7280]" />
                       <p className="text-xs text-[#616161]">#616161</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <i data-lucide="box" className="w-3 text-[#6B7280]"></i>
+                      <Icon name="box" className="w-3 text-[#6B7280]" />
                       <p className="text-xs text-[#616161]">Other tracking: <span className="text-[#005BD3]">31122025</span></p>
                     </div>
                   </div>
@@ -250,7 +178,7 @@ export default function OrderDetailsPage() {
 
               <div className="bg-white border border-[#E1E3E5] rounded-[8px] mt-4 p-4">
                 <div className="flex items-center gap-1">
-                  <i data-lucide="circle-check" className="w-4 h-4 text-[#111827]"></i>
+                  <Icon name="circle-check" className="w-4 h-4 text-[#111827]" />
                   <p className="text-[#111827] font-bold text-sm">Paid</p>
                 </div>
                 <div className="flex flex-col gap-2 mt-4">
@@ -310,18 +238,18 @@ export default function OrderDetailsPage() {
                 <div className="border-t border-[#F3F4F6] mt-2 pt-2 pl-8 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-3">
                     <button type="button">
-                      <i data-lucide="smile" className="w-4 h-4 text-[#94A3B8]"></i>
+                      <Icon name="smile" className="w-4 h-4 text-[#94A3B8]" />
                     </button>
                     <button type="button">
-                      <i data-lucide="at-sign" className="w-4 h-4 text-[#94A3B8]"></i>
-                    </button>
-
-                    <button type="button">
-                      <i data-lucide="hash" className="w-4 h-4 text-[#94A3B8]"></i>
+                      <Icon name="at-sign" className="w-4 h-4 text-[#94A3B8]" />
                     </button>
 
                     <button type="button">
-                      <i data-lucide="paperclip" className="w-4 h-4 text-[#94A3B8]"></i>
+                      <Icon name="hash" className="w-4 h-4 text-[#94A3B8]" />
+                    </button>
+
+                    <button type="button">
+                      <Icon name="paperclip" className="w-4 h-4 text-[#94A3B8]" />
                     </button>
                   </div>
                   <button type="button" className="bg-[#E2E8F0] rounded-[8px] px-4 py-1.5 text-xs font-bold text-[#94A3B8] shrink-0">Post</button>
@@ -367,7 +295,7 @@ export default function OrderDetailsPage() {
                     <div className="flex justify-between items-start gap-2 flex-wrap">
                       <p className="text-xs text-[#334155]">
                         You marked 6 items as fulfilled from Unit 16, 71A Millar Road, Revesby, NSW 2212.
-                        <i data-lucide="chevron-down" className="inline w-3 h-3"></i>
+                        <Icon name="chevron-down" className="inline w-3 h-3" />
                       </p>
                       <span className="text-[11px] text-[#616161] shrink-0">12:58 pm</span>
                     </div>
@@ -404,12 +332,12 @@ export default function OrderDetailsPage() {
 
                     <p className="text-xs text-[#334155]">
                       $119.66 AUD will be added to your Mar 10, 2026 payout.
-                      <i data-lucide="chevron-down" className="inline w-3 h-3"></i>
+                      <Icon name="chevron-down" className="inline w-3 h-3" />
                     </p>
 
                     <p className="text-xs text-[#334155]">
                       A $122.10 AUD payment was processed using a Mastercard ending in 6612 via Apple Pay.
-                      <i data-lucide="chevron-down" className="inline w-3 h-3"></i>
+                      <Icon name="chevron-down" className="inline w-3 h-3" />
                     </p>
 
                     <p className="text-xs text-[#334155]">Confirmation #Q2HCIRV7 was generated for this order.</p>
@@ -427,7 +355,7 @@ export default function OrderDetailsPage() {
                 <div className="flex justify-between items-center">
                   <p className="font-semibold text-xs text-[#111827]">Tags</p>
                   <button type="button">
-                    <i data-lucide="pencil" className="w-3 h-3 text-[#6B7280]"></i>
+                    <Icon name="pencil" className="w-3 h-3 text-[#6B7280]" />
                   </button>
                 </div>
                 <p className="mt-3 text-xs text-[#616161]">No notes from customer</p>
@@ -437,7 +365,7 @@ export default function OrderDetailsPage() {
                 <div className="flex justify-between items-center">
                   <p className="font-semibold text-xs text-[#111827]">Customer</p>
                   <button type="button">
-                    <i data-lucide="ellipsis" className="w-3 h-3 text-[#6B7280]"></i>
+                    <Icon name="ellipsis" className="w-3 h-3 text-[#6B7280]" />
                   </button>
                 </div>
 
@@ -480,15 +408,15 @@ export default function OrderDetailsPage() {
 
                 <div className="mt-3 flex flex-col gap-2.5">
                   <div className="flex items-center gap-2.5">
-                    <i data-lucide="shopping-bag" className="w-4 h-4 text-[#6B7280] shrink-0"></i>
+                    <Icon name="shopping-bag" className="w-4 h-4 text-[#6B7280] shrink-0" />
                     <p className="text-xs text-[#374151]">This is their 1st order</p>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <i data-lucide="link" className="w-4 h-4 text-[#6B7280] shrink-0"></i>
+                    <Icon name="link" className="w-4 h-4 text-[#6B7280] shrink-0" />
                     <p className="text-xs text-[#374151]">1st session was direct to your store</p>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <i data-lucide="shopping-cart" className="w-4 h-4 text-[#6B7280] shrink-0"></i>
+                    <Icon name="shopping-cart" className="w-4 h-4 text-[#6B7280] shrink-0" />
                     <p className="text-xs text-[#374151]">3 sessions over 2 days</p>
                   </div>
                 </div>
@@ -499,7 +427,7 @@ export default function OrderDetailsPage() {
               <div className="bg-white border border-[#E1E3E5] rounded-[8px] mt-4 p-4">
                 <div className="flex items-center justify-between">
                   <p className="font-semibold text-xs text-[#111827]">Order risk</p>
-                  <i data-lucide="card-sim" className="w-3 h-3 text-[#64748B]"></i>
+                  <Icon name="card-sim" className="w-3 h-3 text-[#64748B]" />
                 </div>
 
                 <div className="mt-3 h-2 w-full bg-[#E5E7EB] rounded-full overflow-hidden">
@@ -519,7 +447,7 @@ export default function OrderDetailsPage() {
                 <div className="flex justify-between items-center">
                   <p className="font-semibold text-xs text-[#111827]">Tags</p>
                   <button type="button">
-                    <i data-lucide="pencil" className="w-3 h-3 text-[#6B7280]"></i>
+                    <Icon name="pencil" className="w-3 h-3 text-[#6B7280]" />
                   </button>
                 </div>
                 <input type="text" className="mt-3 w-full border border-[#D1D5DB] rounded-[8px] px-3 py-1.5 text-xs text-[#111827] outline-none" />
@@ -528,7 +456,6 @@ export default function OrderDetailsPage() {
           </div>
         </main>
       </div>
-    </div>
     </>
   );
 }

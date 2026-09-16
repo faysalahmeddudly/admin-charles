@@ -1,3 +1,5 @@
+import Icon from "../../components/shared/Icon";
+
 export default function LoginPage() {
   return (
     <>
@@ -35,7 +37,7 @@ export default function LoginPage() {
         <span className="text-sm sm:text-[16px]"> Keep me signed in. </span>
 
         <a href="#" className="text-sm sm:text-[16px] text-red-400"> Details</a>
-        <i data-lucide="chevron-down" className="h-3.5 w-3.5 shrink-0 text-[#000116]"></i>
+        <Icon name="chevron-down" className="h-3.5 w-3.5 shrink-0 text-[#000116]" />
       </div>
 
       <p className="text-xs text-[#636363] leading-tight mt-3 sm:px-3">Choosing "Keep me signed in" reduces the number of times you’re asked to sign-in on this device. To keep your account secure, use this option only on your personal devices.</p>
