@@ -153,7 +153,7 @@ export default function Sidebar({ isOpen = false, onClose }) {
             type="button"
             onClick={handleLogout}
             title="Log out"
-            className="shrink-0 p-1.5 rounded-md text-[#94A3B8] hover:bg-[#111827] hover:text-white"
+            className="shrink-0 p-1.5 rounded-md text-[#94A3B8] hover:bg-[#111827] hover:text-white cursor-pointer"
           >
             <Icon name="log-out" className="h-[1.1rem] w-[1.1rem] shrink-0" />
           </button>
