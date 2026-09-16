@@ -1,6 +1,71 @@
+import { useState } from "react";
 import Icon from "../../components/shared/Icon";
 
+const priorityStyles = {
+  High: { backgroundColor: "#FEE2E2CC", color: "#DC2626" },
+  Medium: { backgroundColor: "#FEF3C7", color: "#D97706" },
+  Low: { backgroundColor: "#F1F5F9", color: "#64748B" },
+};
+
+const statusStyles = {
+  Open: { backgroundColor: "#FEE2E2CC", color: "#DC2626" },
+  Pending: { backgroundColor: "#FEF3C7", color: "#D97706" },
+  Resolved: { backgroundColor: "#D1FAE5", color: "#059669" },
+};
+
+function PrioritySelect({ value, onChange }) {
+  return (
+    <div className="relative inline-block">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={priorityStyles[value]}
+        className="priority-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6"
+      >
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
+        <Icon name="chevron-down" className="w-3 h-3" />
+      </span>
+    </div>
+  );
+}
+
+function StatusSelect({ value, onChange }) {
+  return (
+    <div className="relative inline-block">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={statusStyles[value]}
+        className="status-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6"
+      >
+        <option value="Open">Open</option>
+        <option value="Pending">Pending</option>
+        <option value="Resolved">Resolved</option>
+      </select>
+      <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
+        <Icon name="chevron-down" className="w-3 h-3" />
+      </span>
+    </div>
+  );
+}
+
 export default function TicketsPage() {
+  const [priority1, setPriority1] = useState("High");
+  const [priority2, setPriority2] = useState("High");
+  const [priority3, setPriority3] = useState("High");
+  const [priority4, setPriority4] = useState("High");
+  const [priority5, setPriority5] = useState("High");
+
+  const [status1, setStatus1] = useState("Open");
+  const [status2, setStatus2] = useState("Open");
+  const [status3, setStatus3] = useState("Open");
+  const [status4, setStatus4] = useState("Open");
+  const [status5, setStatus5] = useState("Open");
+
   return (
     <>
       {/* Content */}
@@ -55,28 +120,10 @@ export default function TicketsPage() {
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">Return & Refund</td>
                     <td className="px-5 py-4 text-xs text-[#1E293B] whitespace-nowrap">Jordan Blake</td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="priority-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, priorityStyles)">
-                          <option value="High">High</option>
-                          <option value="Medium">Medium</option>
-                          <option value="Low">Low</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <PrioritySelect value={priority1} onChange={setPriority1} />
                     </td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="status-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, statusStyles)">
-                          <option value="Open">Open</option>
-                          <option value="Pending">Pending</option>
-                          <option value="Resolved">Resolved</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <StatusSelect value={status1} onChange={setStatus1} />
                     </td>
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">13 Sep 2026</td>
                   </tr>
@@ -86,28 +133,10 @@ export default function TicketsPage() {
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">Order Issues</td>
                     <td className="px-5 py-4 text-xs text-[#1E293B] whitespace-nowrap">Priya Nandakumar</td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="priority-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, priorityStyles)">
-                          <option value="High">High</option>
-                          <option value="Medium">Medium</option>
-                          <option value="Low">Low</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <PrioritySelect value={priority2} onChange={setPriority2} />
                     </td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="status-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, statusStyles)">
-                          <option value="Open">Open</option>
-                          <option value="Pending">Pending</option>
-                          <option value="Resolved">Resolved</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <StatusSelect value={status2} onChange={setStatus2} />
                     </td>
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">12 Sep 2026</td>
                   </tr>
