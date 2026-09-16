@@ -7,11 +7,13 @@ const Root = () => {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen font-[Inter]">
+    <div className="flex h-screen overflow-hidden font-[Inter]">
       <Sidebar isOpen={isMobileSidebarOpen} onClose={() => setIsMobileSidebarOpen(false)} />
-      <div className="flex-1 min-w-0 flex flex-col">
+      <div className="flex-1 min-w-0 flex flex-col h-screen overflow-hidden">
         <Topbar onMenuClick={() => setIsMobileSidebarOpen(true)} />
-        <Outlet />
+        <div className="flex-1 overflow-y-auto">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

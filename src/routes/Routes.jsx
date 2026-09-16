@@ -14,7 +14,6 @@ import OrdersPage from "../Pages/Orders/OrdersPage";
 import OrderDetailsPage from "../Pages/Orders/OrderDetailsPage";
 import ProductCategoriesPage from "../Pages/Products/ProductCategoriesPage";
 import ProductsPage from "../Pages/Products/ProductsPage";
-import RegisterPage from "../Pages/Auth/RegisterPage";
 import SettingsPage from "../Pages/Settings/SettingsPage";
 import StudioPage from "../Pages/Studio/StudioPage";
 import StudioEmbroideryPage from "../Pages/Studio/StudioEmbroideryPage";
@@ -31,10 +30,10 @@ const router = createBrowserRouter([
             path: "login",
             Component: LoginPage,
           },
-          {
-            path: "register",
-            Component: RegisterPage,
-          },
+          // {
+          //   path: "register",
+          //   Component: RegisterPage,
+          // },
         ],
       },
     ],

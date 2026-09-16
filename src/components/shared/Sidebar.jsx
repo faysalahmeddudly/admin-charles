@@ -51,11 +51,11 @@ export default function Sidebar({ isOpen = false, onClose }) {
     <>
       <aside
         id="sidebar"
-        className={`fixed inset-y-0 left-0 z-50 w-[260px] sm:w-[280px] lg:w-[302px] ${
+        className={`fixed inset-y-0 left-0 z-50 w-[260px] sm:w-[280px] lg:w-[302px] h-screen ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } bg-[#070D19] border-r border-[#151E30] transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 lg:shrink-0 flex flex-col justify-between overflow-y-auto`}
+        } bg-[#070D19] border-r border-[#151E30] transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 lg:shrink-0 flex flex-col overflow-hidden`}
       >
-        <div>
+        <div className="flex-1 min-h-0 overflow-y-auto scrollbar-thin">
           <div className="flex items-center justify-between p-4 sm:p-6 lg:justify-center">
             <img src="/assets/logo.png" alt="Logo" className="h-9 sm:h-10 lg:h-16 w-auto rounded-lg" />
             <button id="closeSidebarBtn" onClick={onClose} className="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-md text-[#94A3B8] hover:bg-[#111827]">
@@ -137,7 +137,7 @@ export default function Sidebar({ isOpen = false, onClose }) {
           </nav>
         </div>
 
-        <div className="bg-[#050913] p-4 sm:p-6 flex gap-3 items-center">
+        <div className="shrink-0 bg-[#050913] p-4 sm:p-6 flex gap-3 items-center">
           <div className="h-8 w-8 shrink-0 bg-[#EA3829] flex items-center justify-center overflow-hidden rounded-full">
             {avatar ? (
               <img src={avatar} alt={`${displayName} avatar`} className="h-full w-full object-cover" />

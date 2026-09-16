@@ -7,6 +7,7 @@ export const STORAGE_KEYS = {
 export const API_ENDPOINTS = {
   ADMIN_LOGIN: "/admin/login",
   ADMIN_REGISTER: "/admin/register",
+  ADMIN_PRODUCT: "/admin/product",
 };
 
 export const ROUTES = {
