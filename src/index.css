@@ -43,6 +43,22 @@ body {
   scrollbar-color: var(--color-sidebar-border) transparent;
 }
 
+@keyframes app-toast-in {
+  0% {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.app-toast-enter {
+  animation: app-toast-in 0.2s ease-out;
+}
+
 
 
 

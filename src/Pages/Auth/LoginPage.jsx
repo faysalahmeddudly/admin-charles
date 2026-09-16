@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
 import Icon from "../../components/shared/Icon";
+import { useToast } from "../../components/shared/Toast";
 import authService from "../../redux/api/authService";
 import { loginStarted, loginSucceeded, loginFailed } from "../../redux/slices/authSlice";
 import { ROUTES } from "../../lib/constants";
@@ -10,12 +11,11 @@ export default function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const toast = useToast();
   const { isLoading, error } = useSelector((state) => state.auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [keepSignedIn, setKeepSignedIn] = useState(false);
-  const [showKeepSignedInDetails, setShowKeepSignedInDetails] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -33,14 +33,13 @@ export default function LoginPage() {
           avatar: authData?.avatar,
         })
       );
+      toast.success("Logged in successfully");
 
       navigate(location.state?.from?.pathname || ROUTES.DASHBOARD, { replace: true });
     } catch (requestError) {
-      dispatch(
-        loginFailed(
-          requestError?.message || "Unable to log in. Please check your credentials and try again."
-        )
-      );
+      const message = requestError?.message || "Unable to log in. Please check your credentials and try again.";
+      dispatch(loginFailed(message));
+      toast.error(message);
     }
   };
 
@@ -102,32 +101,15 @@ export default function LoginPage() {
       </div>
 
       <div className="flex flex-wrap items-center gap-1 mt-6">
-        <input
-          type="checkbox"
-          className="h-4 w-4 shrink-0"
-          checked={keepSignedIn}
-          onChange={(e) => setKeepSignedIn(e.target.checked)}
-        />
+        <input type="checkbox" className="h-4 w-4 shrink-0" />
 
         <span className="text-sm sm:text-[16px]"> Keep me signed in. </span>
 
-        <button
-          type="button"
-          onClick={() => setShowKeepSignedInDetails((prev) => !prev)}
-          className="flex items-center gap-1"
-          aria-expanded={showKeepSignedInDetails}
-        >
-          <span className="text-sm sm:text-[16px] text-red-400">Details</span>
-          <Icon
-            name="chevron-down"
-            className={`h-3.5 w-3.5 shrink-0 text-[#000116] transition-transform duration-200 ${showKeepSignedInDetails ? "rotate-180" : ""}`}
-          />
-        </button>
+        <a href="#" className="text-sm sm:text-[16px] text-red-400"> Details</a>
+        <Icon name="chevron-down" className="h-3.5 w-3.5 shrink-0 text-[#000116]" />
       </div>
 
-      {showKeepSignedInDetails ? (
-        <p className="text-xs text-[#636363] leading-tight mt-3 sm:px-3">Choosing "Keep me signed in" reduces the number of times you’re asked to sign-in on this device. To keep your account secure, use this option only on your personal devices.</p>
-      ) : null}
+      <p className="text-xs text-[#636363] leading-tight mt-3 sm:px-3">Choosing "Keep me signed in" reduces the number of times you’re asked to sign-in on this device. To keep your account secure, use this option only on your personal devices.</p>
     </form>
 
     <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs text-[#636363] mt-4 text-center">

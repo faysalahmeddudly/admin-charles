@@ -2,12 +2,14 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import authService from "../../redux/api/authService";
+import { useToast } from "../../components/shared/Toast";
 import { registerStarted, registerSucceeded, registerFailed } from "../../redux/slices/authSlice";
 import { ROUTES } from "../../lib/constants";
 
 export default function RegisterPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const toast = useToast();
   const { isLoading, error } = useSelector((state) => state.auth);
 
   const [name, setName] = useState("");
@@ -21,6 +23,7 @@ export default function RegisterPage() {
 
     if (password !== confirmPassword) {
       dispatch(registerFailed("Passwords do not match."));
+      toast.error("Passwords do not match.");
       return;
     }
 
@@ -38,14 +41,13 @@ export default function RegisterPage() {
           avatar: authData?.avatar,
         })
       );
+      toast.success("Account created successfully");
 
       navigate(ROUTES.DASHBOARD, { replace: true });
     } catch (requestError) {
-      dispatch(
-        registerFailed(
-          requestError?.message || "Unable to create account. Please try again."
-        )
-      );
+      const message = requestError?.message || "Unable to create account. Please try again.";
+      dispatch(registerFailed(message));
+      toast.error(message);
     }
   };
 

@@ -1,6 +1,11 @@
 import { useState } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 import Icon from "./Icon";
+import { useToast } from "./Toast";
+import { selectCurrentAvatar, selectCurrentName, selectCurrentRole } from "../../redux/selectors/authSelectors";
+import { logout } from "../../redux/slices/authSlice";
+import { ROUTES } from "../../lib/constants";
 
 const linkClass = ({ isActive }) =>
   `flex items-center gap-2.5 p-3 rounded-[12px] ${
@@ -18,6 +23,29 @@ const subLinkClass = ({ isActive }) =>
 
 export default function Sidebar({ isOpen = false, onClose }) {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const toast = useToast();
+  const name = useSelector(selectCurrentName);
+  const role = useSelector(selectCurrentRole);
+  const avatar = useSelector(selectCurrentAvatar);
+
+  const displayName = name || "Sarah Miller";
+  const displayRole = role || "Store Manager";
+  const initials = displayName
+    ?.split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    toast.success("Logged out successfully");
+    onClose?.();
+    navigate(ROUTES.LOGIN, { replace: true });
+  };
 
   return (
     <>
@@ -110,13 +138,25 @@ export default function Sidebar({ isOpen = false, onClose }) {
         </div>
 
         <div className="bg-[#050913] p-4 sm:p-6 flex gap-3 items-center">
-          <div className="h-8 w-8 shrink-0 bg-[#EA3829] flex items-center justify-center rounded-full">
-            <span className="font-bold text-[12px] leading-4 tracking-[-0.3px] text-white">SM</span>
+          <div className="h-8 w-8 shrink-0 bg-[#EA3829] flex items-center justify-center overflow-hidden rounded-full">
+            {avatar ? (
+              <img src={avatar} alt={`${displayName} avatar`} className="h-full w-full object-cover" />
+            ) : (
+              <span className="font-bold text-[12px] leading-4 tracking-[-0.3px] text-white">{initials}</span>
+            )}
           </div>
-          <div className="flex flex-col gap-[2px] min-w-0">
-            <p className="font-bold text-[13px] leading-4 text-white truncate">Sarah Miller</p>
-            <p className="text-[11px] leading-3.5 text-[#94A3B8] truncate">Store Manager</p>
+          <div className="flex flex-col gap-[2px] min-w-0 flex-1">
+            <p className="font-bold text-[13px] leading-4 text-white truncate">{displayName}</p>
+            <p className="text-[11px] leading-3.5 text-[#94A3B8] truncate">{displayRole}</p>
           </div>
+          <button
+            type="button"
+            onClick={handleLogout}
+            title="Log out"
+            className="shrink-0 p-1.5 rounded-md text-[#94A3B8] hover:bg-[#111827] hover:text-white"
+          >
+            <Icon name="log-out" className="h-[1.1rem] w-[1.1rem] shrink-0" />
+          </button>
         </div>
       </aside>
 
