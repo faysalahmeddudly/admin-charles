@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink } from "react-router";
 import Icon from "./Icon";
 
@@ -16,6 +17,8 @@ const subLinkClass = ({ isActive }) =>
   }`;
 
 export default function Sidebar({ isOpen = false, onClose }) {
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+
   return (
     <>
       <aside
@@ -42,13 +45,37 @@ export default function Sidebar({ isOpen = false, onClose }) {
               <p className="text-sm">Orders</p>
             </NavLink>
             <div className="group">
-              <NavLink to="/products" className={linkClass} onClick={onClose}>
+              <NavLink
+                to="/products"
+                className={linkClass}
+                onClick={() => {
+                  setIsProductsOpen(true);
+                  onClose?.();
+                }}
+              >
                 <Icon name="tag" className="h-4 shrink-0" />
                 <p className="text-sm">Products</p>
-                <Icon name="chevron-down" className="ml-auto h-3 w-3 shrink-0" />
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setIsProductsOpen((open) => !open);
+                  }}
+                  className="ml-auto p-1 -m-1"
+                >
+                  <Icon
+                    name="chevron-down"
+                    className={`h-3 w-3 shrink-0 transition-transform ${isProductsOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
               </NavLink>
 
-              <div className="hidden group-hover:flex flex-col ml-5 mt-1 rounded-[8px] bg-[#111827]">
+              <div
+                className={`${
+                  isProductsOpen ? "flex" : "hidden"
+                } group-hover:flex flex-col ml-5 mt-1 rounded-[8px] bg-[#111827]`}
+              >
                 <NavLink to="/products/categories" className={subLinkClass} onClick={onClose}>
                   <Icon name="tag" className="h-3.5 shrink-0" />
                   <p className="text-xs">Categories & Attributes</p>

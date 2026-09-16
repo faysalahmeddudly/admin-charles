@@ -1,4 +1,23 @@
 import Icon from "../../components/shared/Icon";
+import OrderFlowChart from "../../components/charts/OrderFlowChart";
+import OrderStatusDonut from "../../components/charts/OrderStatusDonut";
+
+const orderFlowData = [
+  { label: "Mon", value: 3500 },
+  { label: "Tue", value: 4300 },
+  { label: "Wed", value: 3200 },
+  { label: "Thu", value: 7000 },
+  { label: "Fri", value: 5200 },
+  { label: "Sat", value: 4100 },
+  { label: "Sun", value: 3800 },
+];
+
+const orderStatusData = [
+  { label: "In Production", value: 38, color: "#EF4444" },
+  { label: "Awaiting Approval", value: 14, color: "#F59E0B" },
+  { label: "Shipped", value: 26, color: "#0EA5E9" },
+  { label: "Delivered", value: 61, color: "#10B981" },
+];
 
 export default function DashboardPage() {
   return (
@@ -50,11 +69,15 @@ export default function DashboardPage() {
                 <div className="font-bold text-[11px] leading-4 text-[#94A3B8]">AUD</div>
               </div>
 
-              <div id="orderFlowChart" className="min-w-0"></div>
+              <div className="min-w-0">
+                <OrderFlowChart data={orderFlowData} />
+              </div>
             </div>
             <div className="border border-[#E2E8F0]/80 shadow-[0_1px_3px_0_rgba(0,0,0,0.03)] rounded-[8px] p-4 sm:p-5 bg-white m-0 min-w-0">
               <p className="font-bold text-sm text-[#0F172A] mb-6">Order status split</p>
-              <div id="orderStatusChart" className="w-full mb-5 min-w-0"></div>
+              <div className="w-full mb-5 min-w-0">
+                <OrderStatusDonut data={orderStatusData} />
+              </div>
             </div>
           </div>
 

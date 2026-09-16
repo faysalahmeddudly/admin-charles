@@ -1,5 +1,13 @@
 import { Link } from "react-router";
 import Icon from "../../components/shared/Icon";
+import SparklineChart from "../../components/charts/SparklineChart";
+
+const ordersSparkline = [0, 0, 0, 15, 0, 30, 0, 25, 0, 50, 30, 0, 0, 0];
+const itemsSparkline = [0, 0, 0, 0, 0, 10, 20, 10, 0, 0, 0, 0, 0, 0];
+const salesSparkline = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const fulfilledSparkline = [0, 0, 0, 0, 0, 10, 20, 10, 0, 0, 0, 0, 0, 0];
+const deliveredSparkline = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const timeSparkline = [0, 0, 0, 0, 0, 10, 20, 10, 0, 0, 0, 0, 0, 0];
 
 export default function OrdersPage() {
   return (
@@ -38,7 +46,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
                 </div>
-                <div id="ordersChart" className="w-[50px] flex-shrink-0"></div>
+                <SparklineChart data={ordersSparkline} className="w-[50px] flex-shrink-0" />
               </div>
 
               <div className="flex-shrink-0 border-l border-[#E5E7EB] px-4 flex items-center gap-2">
@@ -52,7 +60,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
                 </div>
-                <div id="itemsChart" className="w-[50px] flex-shrink-0"></div>
+                <SparklineChart data={itemsSparkline} className="w-[50px] flex-shrink-0" />
               </div>
 
               <div className="flex-shrink-0 border-l border-[#E5E7EB] px-4 flex items-center gap-2">
@@ -66,7 +74,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
                 </div>
-                <div id="salesChart" className="w-[50px] flex-shrink-0"></div>
+                <SparklineChart data={salesSparkline} className="w-[50px] flex-shrink-0" />
               </div>
 
               <div className="flex-shrink-0 border-l border-[#E5E7EB] px-4 flex items-center gap-2">
@@ -80,7 +88,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
                 </div>
-                <div id="fulfilledChart" className="w-[50px] flex-shrink-0"></div>
+                <SparklineChart data={fulfilledSparkline} className="w-[50px] flex-shrink-0" />
               </div>
 
               <div className="flex-shrink-0 border-l border-[#E5E7EB] px-4 flex items-center gap-2">
@@ -93,7 +101,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
                 </div>
-                <div id="deliveredChart" className="w-[54px] flex-shrink-0"></div>
+                <SparklineChart data={deliveredSparkline} className="w-[54px] flex-shrink-0" />
               </div>
 
               <div className="flex-shrink-0 border-l border-[#E5E7EB] px-4 flex items-center gap-2">
@@ -107,7 +115,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
                 </div>
-                <div id="timeChart" className="w-[54px] flex-shrink-0"></div>
+                <SparklineChart data={timeSparkline} className="w-[54px] flex-shrink-0" />
               </div>
             </div>
           </div>
