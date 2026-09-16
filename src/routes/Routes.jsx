@@ -6,6 +6,7 @@ import PublicRoute from "./PublicRoute";
 import DashboardPage from "../Pages/Dashboard/DashboardPage";
 import AddProductPage from "../Pages/Products/AddProductPage";
 import CmsPage from "../Pages/Cms/CmsPage";
+import LeagelPolicyEditiorpage from "../Pages/Cms/LeagelPolicyEditiorpage";
 import CouponsPage from "../Pages/Coupons/CouponsPage";
 import CustomersPage from "../Pages/Customers/CustomersPage";
 import EditProductPage from "../Pages/Products/EditProductPage";
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
           {
             path: "cms",
             Component: CmsPage,
+          },
+          {
+            path: "cms/legal/edit",
+            Component: LeagelPolicyEditiorpage,
           },
           {
             path: "settings",

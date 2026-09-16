@@ -1,6 +1,23 @@
+import { useNavigate } from "react-router";
 import Icon from "../../components/shared/Icon";
 
+const LEGAL_PAGES = [
+  { title: "Terms and Conditions", status: "Published", updatedAt: "12 Aug 2026" },
+  { title: "Privacy Policy", status: "Published", updatedAt: "12 Aug 2026" },
+  { title: "Shipping & Turnaround Times", status: "Published", updatedAt: "01 Sep 2026" },
+  { title: "Artwork Guidelines & Formats", status: "Published", updatedAt: "28 Aug 2026" },
+  { title: "Wholesale Reseller Program", status: "Draft", updatedAt: "20 Jul 2026" },
+  { title: "Print Satisfaction Guarantee", status: "Published", updatedAt: "15 Jun 2026" },
+  { title: "Online Quote Calculator", status: "Published", updatedAt: "03 Sep 2026" },
+];
+
 export default function CmsPage() {
+  const navigate = useNavigate();
+
+  const handleEditLegalPage = (page) => {
+    navigate("/cms/legal/edit", { state: { page } });
+  };
+
   return (
     <>
       {/* Content */}
@@ -62,82 +79,28 @@ export default function CmsPage() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-[#F1F5F9]">
-                      <tr className="legal-page-row" data-page="Terms and Conditions" data-status="Published" data-updated="12 Aug 2026" data-content="">
-                        <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">Terms and Conditions</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-[#D1FAE5] text-[#059669] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Published </span>
-                        </td>
-                        <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">12 Aug 2026</td>
-                        <td className="px-6 py-4">
-                          <div className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer">Edit</div>
-                        </td>
-                      </tr>
-
-                      <tr className="legal-page-row" data-page="Privacy Policy" data-status="Published" data-updated="12 Aug 2026" data-content="">
-                        <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">Privacy Policy</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-[#D1FAE5] text-[#059669] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Published </span>
-                        </td>
-                        <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">12 Aug 2026</td>
-                        <td className="px-6 py-4">
-                          <div className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer">Edit</div>
-                        </td>
-                      </tr>
-
-                      <tr className="legal-page-row" data-page="Shipping & Turnaround Times" data-status="Published" data-updated="01 Sep 2026" data-content="">
-                        <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">Shipping & Turnaround Times</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-[#D1FAE5] text-[#059669] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Published </span>
-                        </td>
-                        <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">01 Sep 2026</td>
-                        <td className="px-6 py-4">
-                          <div className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer">Edit</div>
-                        </td>
-                      </tr>
-
-                      <tr className="legal-page-row" data-page="Artwork Guidelines & Formats" data-status="Published" data-updated="28 Aug 2026" data-content="">
-                        <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">Artwork Guidelines & Formats</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-[#D1FAE5] text-[#059669] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Published </span>
-                        </td>
-                        <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">28 Aug 2026</td>
-                        <td className="px-6 py-4">
-                          <div className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer">Edit</div>
-                        </td>
-                      </tr>
-
-                      <tr className="legal-page-row" data-page="Wholesale Reseller Program" data-status="Draft" data-updated="20 Jul 2026" data-content="">
-                        <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">Wholesale Reseller Program</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-[#F1F5F9] text-[#475569] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Draft </span>
-                        </td>
-                        <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">20 Jul 2026</td>
-                        <td className="px-6 py-4">
-                          <div className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer">Edit</div>
-                        </td>
-                      </tr>
-
-                      <tr className="legal-page-row" data-page="Print Satisfaction Guarantee" data-status="Published" data-updated="15 Jun 2026" data-content="">
-                        <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">Print Satisfaction Guarantee</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-[#D1FAE5] text-[#059669] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Published </span>
-                        </td>
-                        <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">15 Jun 2026</td>
-                        <td className="px-6 py-4">
-                          <div className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer">Edit</div>
-                        </td>
-                      </tr>
-
-                      <tr className="legal-page-row" data-page="Online Quote Calculator" data-status="Published" data-updated="03 Sep 2026" data-content="">
-                        <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">Online Quote Calculator</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-[#D1FAE5] text-[#059669] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Published </span>
-                        </td>
-                        <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">03 Sep 2026</td>
-                        <td className="px-6 py-4">
-                          <div className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer">Edit</div>
-                        </td>
-                      </tr>
+                      {LEGAL_PAGES.map((page) => (
+                        <tr key={page.title} className="legal-page-row">
+                          <td className="px-6 py-4 text-xs font-medium text-[#0F172A] whitespace-nowrap">{page.title}</td>
+                          <td className="px-6 py-4">
+                            {page.status === "Published" ? (
+                              <span className="bg-[#D1FAE5] text-[#059669] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Published </span>
+                            ) : (
+                              <span className="bg-[#F1F5F9] text-[#475569] px-2.5 py-[2px] rounded text-[11px] leading-4 cursor-pointer"> Draft </span>
+                            )}
+                          </td>
+                          <td className="px-6 py-4 text-xs text-[#334155] whitespace-nowrap">{page.updatedAt}</td>
+                          <td className="px-6 py-4">
+                            <button
+                              type="button"
+                              onClick={() => handleEditLegalPage(page)}
+                              className="edit-legal-page text-[#E51E2B] text-xs cursor-pointer"
+                            >
+                              Edit
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -212,53 +175,6 @@ export default function CmsPage() {
             </div>
           </form>
         </main>
-
-    {/* Edit Legal Page Modal (must be in the DOM BEFORE the script that queries it) */}
-    <div id="legalPageModal" className="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-4">
-      <div className="bg-white w-full sm:w-[90%] md:max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
-        {/* Header */}
-        <div className="flex items-start sm:items-center justify-between gap-3 px-4 sm:px-5 py-4 border-b border-[#E2E8F0]">
-          <div className="min-w-0">
-            <p id="legalPageModalTitle" className="font-bold text-[16px] leading-6 tracking-[-0.4px] text-[#0F172A]">Edit Page</p>
-          </div>
-
-          <button id="closeLegalPageModal" className="shrink-0">
-            <Icon name="x" className="w-4 h-4 text-[#94A3B8]" />
-          </button>
-        </div>
-
-        {/* Body */}
-        <div className="p-4 sm:p-5 space-y-4">
-          {/* Status */}
-          <div className="flex items-center gap-4">
-            <label className="text-xs font-bold text-[#1E293B]">Status</label>
-
-            <div className="relative mt-1">
-              <select id="legalPageStatus" className="appearance-none py-2 px-3 pr-10 text-xs text-[#334155] border border-[#E2E8F0] rounded-[8px] bg-[#F8FAFC] outline-none">
-                <option value="Published">Published</option>
-                <option value="Draft">Draft</option>
-              </select>
-
-              <Icon name="chevron-down" className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B] pointer-events-none" />
-            </div>
-          </div>
-
-          {/* Page Content */}
-          <div>
-            <textarea id="legalPageContent" rows="8" placeholder="Enter the page content here..." className="mt-1 w-full py-2 px-3 text-xs leading-5 text-[#334155] border border-[#E2E8F0] rounded-[8px] bg-[#F8FAFC] outline-none placeholder:text-[#94A3B8] resize-none scrollbar-thin"></textarea>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="flex flex-col-reverse sm:flex-row justify-end gap-2 px-4 sm:px-5 py-4 border-t border-[#E2E8F0]">
-          <button id="cancelLegalPageModal" type="button" className="w-full sm:w-auto px-4 py-2 text-xs border border-[#CBD5E1] rounded-[8px] text-[#334155]">Cancel</button>
-
-          <button id="saveLegalPageModal" type="button" className="w-full sm:w-auto flex items-center justify-center gap-1.5 bg-[#DC2626] rounded-[8px] py-2 px-5">
-            <span className="font-bold text-xs text-white">Publish changes</span>
-          </button>
-        </div>
-      </div>
-    </div>
     </>
   );
 }

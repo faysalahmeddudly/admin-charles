@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NavLink, useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import Icon from "./Icon";
 import { useToast } from "./Toast";
@@ -25,7 +25,14 @@ export default function Sidebar({ isOpen = false, onClose }) {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
   const toast = useToast();
+
+  useEffect(() => {
+    if (location.pathname.startsWith("/products")) {
+      setIsProductsOpen(true);
+    }
+  }, [location.pathname]);
   const name = useSelector(selectCurrentName);
   const role = useSelector(selectCurrentRole);
   const avatar = useSelector(selectCurrentAvatar);
