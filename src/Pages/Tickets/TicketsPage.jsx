@@ -146,28 +146,10 @@ export default function TicketsPage() {
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">Payment & Promos</td>
                     <td className="px-5 py-4 text-xs text-[#1E293B] whitespace-nowrap">Liam Carter</td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="priority-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, priorityStyles)">
-                          <option value="High">High</option>
-                          <option value="Medium">Medium</option>
-                          <option value="Low">Low</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <PrioritySelect value={priority3} onChange={setPriority3} />
                     </td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="status-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, statusStyles)">
-                          <option value="Open">Open</option>
-                          <option value="Pending">Pending</option>
-                          <option value="Resolved">Resolved</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <StatusSelect value={status3} onChange={setStatus3} />
                     </td>
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">11 Sep 2026</td>
                   </tr>
@@ -177,28 +159,10 @@ export default function TicketsPage() {
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">Delivery</td>
                     <td className="px-5 py-4 text-xs text-[#1E293B] whitespace-nowrap">Overdrive Archive Co.</td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="priority-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, priorityStyles)">
-                          <option value="High">High</option>
-                          <option value="Medium">Medium</option>
-                          <option value="Low">Low</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <PrioritySelect value={priority4} onChange={setPriority4} />
                     </td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="status-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, statusStyles)">
-                          <option value="Open">Open</option>
-                          <option value="Pending">Pending</option>
-                          <option value="Resolved">Resolved</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <StatusSelect value={status4} onChange={setStatus4} />
                     </td>
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">09 Sep 2026</td>
                   </tr>
@@ -208,28 +172,10 @@ export default function TicketsPage() {
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">Account</td>
                     <td className="px-5 py-4 text-xs text-[#1E293B] whitespace-nowrap">Grace Mitchell</td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="priority-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, priorityStyles)">
-                          <option value="High">High</option>
-                          <option value="Medium">Medium</option>
-                          <option value="Low">Low</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <PrioritySelect value={priority5} onChange={setPriority5} />
                     </td>
                     <td className="px-5 py-4">
-                      <div className="relative inline-block">
-                        <select className="status-select appearance-none cursor-pointer px-3 py-1 rounded-full text-[11px] font-medium whitespace-nowrap border-0 outline-none pr-6" onchange="updateSelectColor(this, statusStyles)">
-                          <option value="Open">Open</option>
-                          <option value="Pending">Pending</option>
-                          <option value="Resolved">Resolved</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-md text-[#8B5CF6]">
-                          <Icon name="chevron-down" className="w-3 h-3" />
-                        </span>
-                      </div>
+                      <StatusSelect value={status5} onChange={setStatus5} />
                     </td>
                     <td className="px-5 py-4 text-xs text-[#334155] whitespace-nowrap">07 Sep 2026</td>
                   </tr>
