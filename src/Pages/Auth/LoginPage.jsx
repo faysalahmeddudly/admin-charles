@@ -7,7 +7,7 @@ export default function LoginPage() {
     <div className="relative w-full max-w-[410px] border border-gray-400 rounded-md pt-8 sm:pt-10 p-6 sm:p-8">
       {/* Logo */}
       <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-4">
-        <img src="assets/logo-black.png" alt="Charles Prints Logo" className="w-[120px] sm:w-[150px] h-auto object-contain" />
+        <img src="/assets/logo-black.png" alt="Charles Prints Logo" className="w-[120px] sm:w-[150px] h-auto object-contain" />
       </div>
 
       {/* Heading */}

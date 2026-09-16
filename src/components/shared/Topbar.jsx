@@ -11,13 +11,13 @@ function useBreadcrumbTrail() {
   return entry.trail();
 }
 
-export default function Topbar() {
+export default function Topbar({ onMenuClick }) {
   const trail = useBreadcrumbTrail();
 
   return (
     <header className="p-4 sm:p-6 lg:p-6 flex items-center justify-between gap-3 px-4 sm:px-6 border-b border-[#E2E8F0] bg-white sticky top-0 z-20">
       <div className="flex items-center gap-2 min-w-0">
-        <button id="menuBtn" className="lg:hidden inline-flex shrink-0 items-center justify-center w-9 h-9 rounded-md border border-gray-300">
+        <button id="menuBtn" onClick={onMenuClick} className="lg:hidden inline-flex shrink-0 items-center justify-center w-9 h-9 rounded-md border border-gray-300">
           <Icon name="menu" className="w-5 h-5" />
         </button>
         <div className="flex items-center gap-1 min-w-0">

@@ -16,7 +16,7 @@ export default function StudioPage() {
                 <span className="font-semibold text-xs text-[#1F2937] whitespace-nowrap">DTF</span>
               </NavLink>
               <NavLink to="/studio/embroidery" className={({ isActive }) => `rounded-full py-1.5 px-3 flex items-center gap-1.5 ${isActive ? "border border-[#E5E7EB]" : ""}`}>
-                <img src="assets/Embroidery.png" alt="Image" className="h-3.5 shrink-0" />
+                <img src="/assets/Embroidery.png" alt="Image" className="h-3.5 shrink-0" />
                 <span className="font-medium text-xs text-[#4B5563] whitespace-nowrap">Embroidery</span>
               </NavLink>
             </div>
@@ -167,7 +167,7 @@ export default function StudioPage() {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div className="border border-[#E2E8F0] rounded-[8px]">
                   <div className="aspect-square shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.03)] flex items-center justify-center max-h-[144px] w-full p-3">
-                    <img src="assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
+                    <img src="/assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
                   </div>
                   <div className="pb-[10px] px-[10px]">
                     <div className="flex flex-col mt-3">
@@ -182,7 +182,7 @@ export default function StudioPage() {
 
                 <div className="border border-[#E2E8F0] rounded-[8px]">
                   <div className="aspect-square shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.03)] flex items-center justify-center max-h-[144px] w-full p-3">
-                    <img src="assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
+                    <img src="/assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
                   </div>
                   <div className="pb-[10px] px-[10px]">
                     <div className="flex flex-col mt-3">
@@ -197,7 +197,7 @@ export default function StudioPage() {
 
                 <div className="border border-[#E2E8F0] rounded-[8px]">
                   <div className="aspect-square shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.03)] flex items-center justify-center max-h-[144px] w-full p-3">
-                    <img src="assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
+                    <img src="/assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
                   </div>
                   <div className="pb-[10px] px-[10px]">
                     <div className="flex flex-col mt-3">
@@ -212,7 +212,7 @@ export default function StudioPage() {
 
                 <div className="border border-[#E2E8F0] rounded-[8px]">
                   <div className="aspect-square shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.03)] flex items-center justify-center max-h-[144px] w-full p-3">
-                    <img src="assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
+                    <img src="/assets/whitetail-deer.png" alt="Whitetail Deer" className="max-h-full max-w-full object-contain" />
                   </div>
                   <div className="pb-[10px] px-[10px]">
                     <div className="flex flex-col mt-3">

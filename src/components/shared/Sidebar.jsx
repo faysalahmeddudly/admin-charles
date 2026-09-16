@@ -15,65 +15,67 @@ const subLinkClass = ({ isActive }) =>
       : "text-[#94A3B8] hover:bg-[#EA3829] hover:text-white"
   }`;
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen = false, onClose }) {
   return (
     <>
       <aside
         id="sidebar"
-        className="fixed inset-y-0 left-0 z-50 w-[260px] sm:w-[280px] lg:w-[302px] -translate-x-full bg-[#070D19] border-r border-[#151E30] transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 lg:shrink-0 flex flex-col justify-between overflow-y-auto"
+        className={`fixed inset-y-0 left-0 z-50 w-[260px] sm:w-[280px] lg:w-[302px] ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } bg-[#070D19] border-r border-[#151E30] transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 lg:shrink-0 flex flex-col justify-between overflow-y-auto`}
       >
         <div>
           <div className="flex items-center justify-between p-4 sm:p-6 lg:justify-center">
-            <img src="assets/logo.png" alt="Logo" className="h-9 sm:h-10 lg:h-16 w-auto rounded-lg" />
-            <button id="closeSidebarBtn" className="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-md text-[#94A3B8] hover:bg-[#111827]">
+            <img src="/assets/logo.png" alt="Logo" className="h-9 sm:h-10 lg:h-16 w-auto rounded-lg" />
+            <button id="closeSidebarBtn" onClick={onClose} className="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-md text-[#94A3B8] hover:bg-[#111827]">
               <Icon name="x" className="w-5 h-5" />
             </button>
           </div>
 
           <nav className="px-4 sm:px-6 lg:px-10 flex flex-col gap-1">
-            <NavLink to="/dashboard" className={linkClass}>
+            <NavLink to="/dashboard" className={linkClass} onClick={onClose}>
               <Icon name="layout-dashboard" className="h-4 shrink-0" />
               <p className="text-sm">Dashboard</p>
             </NavLink>
-            <NavLink to="/orders" className={linkClass}>
+            <NavLink to="/orders" className={linkClass} onClick={onClose}>
               <Icon name="lock" className="h-4 shrink-0" />
               <p className="text-sm">Orders</p>
             </NavLink>
             <div className="group">
-              <NavLink to="/products" className={linkClass}>
+              <NavLink to="/products" className={linkClass} onClick={onClose}>
                 <Icon name="tag" className="h-4 shrink-0" />
                 <p className="text-sm">Products</p>
                 <Icon name="chevron-down" className="ml-auto h-3 w-3 shrink-0" />
               </NavLink>
 
               <div className="hidden group-hover:flex flex-col ml-5 mt-1 rounded-[8px] bg-[#111827]">
-                <NavLink to="/products/categories" className={subLinkClass}>
+                <NavLink to="/products/categories" className={subLinkClass} onClick={onClose}>
                   <Icon name="tag" className="h-3.5 shrink-0" />
                   <p className="text-xs">Categories & Attributes</p>
                 </NavLink>
               </div>
             </div>
-            <NavLink to="/studio" className={linkClass}>
+            <NavLink to="/studio" className={linkClass} onClick={onClose}>
               <Icon name="image" className="h-4 shrink-0" />
               <p className="text-sm">Design Studio Assets</p>
             </NavLink>
-            <NavLink to="/customers" className={linkClass}>
+            <NavLink to="/customers" className={linkClass} onClick={onClose}>
               <Icon name="user-round" className="h-4 shrink-0" />
               <p className="text-sm">Customers</p>
             </NavLink>
-            <NavLink to="/coupons" className={linkClass}>
+            <NavLink to="/coupons" className={linkClass} onClick={onClose}>
               <Icon name="ticket" className="h-4 shrink-0" />
               <p className="text-sm">Coupons & Discounts</p>
             </NavLink>
-            <NavLink to="/tickets" className={linkClass}>
+            <NavLink to="/tickets" className={linkClass} onClick={onClose}>
               <Icon name="life-buoy" className="h-4 shrink-0" />
               <p className="text-sm">Support Tickets</p>
             </NavLink>
-            <NavLink to="/cms" className={linkClass}>
+            <NavLink to="/cms" className={linkClass} onClick={onClose}>
               <Icon name="monitor" className="h-4 shrink-0" />
               <p className="text-sm">Content / CMS</p>
             </NavLink>
-            <NavLink to="/settings" className={linkClass}>
+            <NavLink to="/settings" className={linkClass} onClick={onClose}>
               <Icon name="settings" className="h-4 shrink-0" />
               <p className="text-sm">Settings</p>
             </NavLink>
@@ -92,7 +94,11 @@ export default function Sidebar() {
       </aside>
 
       {/* Overlay (mobile only) */}
-      <div id="overlay" className="fixed inset-0 bg-black/30 z-30 hidden lg:hidden"></div>
+      <div
+        id="overlay"
+        onClick={onClose}
+        className={`fixed inset-0 bg-black/30 z-30 lg:hidden ${isOpen ? "" : "hidden"}`}
+      ></div>
     </>
   );
 }

@@ -3,7 +3,7 @@ export default function RegisterPage() {
     <>
       <div className="relative w-full max-w-[590px] border border-gray-400 rounded-md pt-8 sm:pt-10 p-6 sm:p-8">
       <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-4">
-        <img src="assets/logo-black.png" alt="Charles Prints Logo" className="w-[120px] sm:w-[150px] h-auto object-contain" />
+        <img src="/assets/logo-black.png" alt="Charles Prints Logo" className="w-[120px] sm:w-[150px] h-auto object-contain" />
       </div>
 
       <h2 className="text-2xl sm:text-[32px] font-semibold text-[#636363] mb-6">Create an account</h2>
@@ -51,9 +51,9 @@ export default function RegisterPage() {
       </div>
 
       <div className="flex justify-center items-center gap-3 mt-1">
-        <img src="assets/google-logo.png" alt="Google" className="w-8 h-8 sm:w-9 sm:h-9 object-contain" />
+        <img src="/assets/google-logo.png" alt="Google" className="w-8 h-8 sm:w-9 sm:h-9 object-contain" />
 
-        <img src="assets/logo-facebook.png" alt="Facebook" className="w-9 h-9 sm:w-10 sm:h-10 object-contain" />
+        <img src="/assets/logo-facebook.png" alt="Facebook" className="w-9 h-9 sm:w-10 sm:h-10 object-contain" />
       </div>
 
       <p className="text-center text-sm text-[#636363] mt-4">Already have an account? <a href="#" className="text-[#EF252C] font-medium">Sign in</a></p>

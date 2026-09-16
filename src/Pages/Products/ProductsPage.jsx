@@ -45,7 +45,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -75,7 +75,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -105,7 +105,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -135,7 +135,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -165,7 +165,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -195,7 +195,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -225,7 +225,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -255,7 +255,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -285,7 +285,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>
@@ -315,7 +315,7 @@ export default function ProductsPage() {
                   <tr>
                     <td className="px-4 py-5">
                       <div className="flex items-center gap-2">
-                        <img src="assets/shirt.png" alt="" className="h-9 shrink-0" />
+                        <img src="/assets/shirt.png" alt="" className="h-9 shrink-0" />
                         <span className="text-xs text-[#0F172A] whitespace-nowrap">AS Colour 5001 Staple</span>
                       </div>
                     </td>

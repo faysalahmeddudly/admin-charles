@@ -120,19 +120,19 @@ Features 1-inch neck ribbing with twin-needle hem stitching and relaxed dropped 
 
                 <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div className="relative w-full aspect-[150/137] rounded-[8px] overflow-hidden border border-[#E4E4E7] bg-[#111827]">
-                    <img src="assets/black-shirt.jpg" alt="Black Variant" className="w-full h-full object-cover" />
+                    <img src="/assets/black-shirt.jpg" alt="Black Variant" className="w-full h-full object-cover" />
 
                     <span className="absolute bottom-3 left-3 text-[10px] leading-4 text-white bg-black/70 rounded py-[2px] px-[6px] rounded inline-flex"> 100x1024 </span>
                   </div>
 
                   <div className="relative w-full aspect-[150/137] rounded-[8px] overflow-hidden border border-[#E4E4E7] bg-[#111827]">
-                    <img src="assets/white-shirt.jpg" alt="White Variant" className="w-full h-full object-cover" />
+                    <img src="/assets/white-shirt.jpg" alt="White Variant" className="w-full h-full object-cover" />
 
                     <span className="absolute bottom-3 left-3 text-[10px] leading-4 text-white bg-black/70 rounded py-[2px] px-[6px] rounded inline-flex"> White Variant </span>
                   </div>
 
                   <div className="relative w-full aspect-[150/137] rounded-[8px] overflow-hidden border border-[#E4E4E7] bg-[#111827]">
-                    <img src="assets/green-shirt.jpg" alt="Forest Green" className="w-full h-full object-cover" />
+                    <img src="/assets/green-shirt.jpg" alt="Forest Green" className="w-full h-full object-cover" />
 
                     <span className="absolute bottom-3 left-3 text-[10px] leading-4 text-white bg-black/70 rounded py-[2px] px-[6px] rounded inline-flex"> Forest Green </span>
                   </div>
